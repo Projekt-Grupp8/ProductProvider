@@ -22,7 +22,7 @@ public class ProductQuery(IProductService productService)
 
 
     [GraphQLName("getAllProducts")]
-    public async Task<IEnumerable<Product>> GetProductsAsync()
+    public async Task<IEnumerable<Product>> GetAllProductsAsync()
     {
         return await _productService.GetAllProductsAsync();
     }
