@@ -11,7 +11,7 @@ public class GraphQL(ILogger<GraphQL> logger, IGraphQLRequestExecutor executor)
     private readonly IGraphQLRequestExecutor _executor = executor;
 
     [Function("GraphQL")]
-    public async Task<IActionResult> Run([HttpTrigger(AuthorizationLevel.Function, "post", Route = "graphql")] HttpRequest req)
+    public async Task<IActionResult> Run([HttpTrigger(AuthorizationLevel.Function, "post", Route = "products")] HttpRequest req)
     {
         return await _executor.ExecuteAsync(req);
     }

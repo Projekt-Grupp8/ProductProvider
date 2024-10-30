@@ -12,7 +12,7 @@ public class Playground(ILogger<Playground> logger)
 
 
     [Function("Playground")]
-    public async Task<HttpResponseData> Run([HttpTrigger(AuthorizationLevel.Function, "get", Route = "graphql")] HttpRequestData req)
+    public async Task<HttpResponseData> Run([HttpTrigger(AuthorizationLevel.Function, "get", Route = "products")] HttpRequestData req)
     {
         var response = req.CreateResponse();
         response.Headers.Add("Content-Type", "text/html; charset=utf-8");
