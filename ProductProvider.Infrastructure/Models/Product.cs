@@ -16,4 +16,5 @@ public class Product
     public int StockQuantity { get; set; }
     public string? ImageURL { get; set; }
     public bool IsNewArrival { get; set; }
+    
 }
