@@ -1,5 +1,4 @@
-﻿using Azure.Core;
-using ProductProvider.Infrastructure.Data.Entities;
+﻿using ProductProvider.Infrastructure.Data.Entities;
 using ProductProvider.Infrastructure.Models;
 
 namespace ProductProvider.Infrastructure.Factories;
@@ -17,7 +16,6 @@ public static class ProductFactory
             Description = request.Description,
             Price = request.Price,
             Category = request.Category,
-            CategoryName = request.Category.CategoryName, //Separat kategorinamn för Partition Key i CosmosDB
             StockQuantity = request.StockQuantity,
             ImageURL = request.ImageURL,
             IsNewArrival = request.IsNewArrival,
@@ -36,7 +34,6 @@ public static class ProductFactory
             Description = request.Description,
             Price = request.Price,
             Category = request.Category,
-            CategoryName = request.Category.CategoryName, //Separat kategorinamn för Partition Key i CosmosDB
             StockQuantity = request.StockQuantity,
             ImageURL = request.ImageURL,
             IsNewArrival = request.IsNewArrival,
@@ -55,7 +52,6 @@ public static class ProductFactory
             Description = entity.Description,
             Price = entity.Price,
             Category = entity.Category,
-            CategoryName = entity.Category.CategoryName, //Separat kategorinamn för Partition Key i CosmosDB
             StockQuantity = entity.StockQuantity,
             ImageURL = entity.ImageURL,
             IsNewArrival = entity.IsNewArrival,

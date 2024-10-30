@@ -1,5 +1,4 @@
-﻿using ProductProvider.Infrastructure.Data.Entities;
-using ProductProvider.Infrastructure.Models;
+﻿using ProductProvider.Infrastructure.Models;
 using ProductProvider.Infrastructure.Services;
 
 namespace ProductProvider.Infrastructure.GraphQL.Queries;
@@ -15,9 +14,9 @@ public class ProductQuery(IProductService productService)
     }
 
     [GraphQLName("getProductsByCategory")]
-    public async Task<IEnumerable<Product>> GetProductsByCategoryAsync(CategoryEntity categoryEntity)
+    public async Task<IEnumerable<Product>> GetProductsByCategoryAsync(string category)
     {
-        return await _productService.GetProductsByCategoryAsync(categoryEntity);
+        return await _productService.GetProductsByCategoryAsync(category);
     }
 
 

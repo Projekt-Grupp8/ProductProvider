@@ -18,11 +18,8 @@ public class DataContext(DbContextOptions<DataContext> options) : DbContext(opti
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<ProductEntity>().ToContainer("Products");
-        modelBuilder.Entity<ProductEntity>().HasPartitionKey(c => c.CategoryName);
-        modelBuilder.Entity<ProductEntity>().OwnsOne(c => c.Category);
+        modelBuilder.Entity<ProductEntity>().HasPartitionKey(c => c.Category);
+        //modelBuilder.Entity<ProductEntity>().OwnsOne(c => c.Category);
 
-        //Behöver vi en egen container för kategorier för att göra dem sökbara, eller räcker det med HasPartitionKey ovan?
-        //modelBuilder.Entity<CategoryEntity>().ToContainer("Categories");
-        //modelBuilder.Entity<CategoryEntity>().OwnsMany(c => c.Products);
     }
 }

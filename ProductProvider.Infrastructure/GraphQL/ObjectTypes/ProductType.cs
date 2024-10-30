@@ -14,8 +14,7 @@ public class ProductType : ObjectType<ProductEntity>
         descriptor.Field(p => p.Sizes).Type<ListType<SizeType>>();
         descriptor.Field(p => p.Description).Type<StringType>();
         descriptor.Field(p => p.Price).Type<DecimalType>();
-        descriptor.Field(p => p.Category).Type<NonNullType<CategoryType>>();
-        descriptor.Field(p => p.CategoryName).Type<StringType>();
+        descriptor.Field(p => p.Category).Type<StringType>();
         descriptor.Field(p => p.StockQuantity).Type<IntType>();
         descriptor.Field(p => p.ImageURL).Type<StringType>();
         descriptor.Field(p => p.IsNewArrival).Type<NonNullType<BooleanType>>();
@@ -32,15 +31,3 @@ public class SizeType : ObjectType<SizeEntity>
     }
 }
 
-public class CategoryType : ObjectType<CategoryEntity>
-{
-    protected override void Configure(IObjectTypeDescriptor<CategoryEntity> descriptor)
-    {
-        //descriptor.Name("Category");
-
-        //descriptor.Field(c => c.CategoryId).Type<NonNullType<IdType>>();
-        descriptor.Field(c => c.CategoryName).Type<NonNullType<StringType>>();
-        descriptor.Field(c => c.CategoryDescription).Type<NonNullType<StringType>>();
-        
-    }
-}

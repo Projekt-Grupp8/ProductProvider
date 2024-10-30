@@ -38,8 +38,7 @@ var host = new HostBuilder()
                 .AddQueryType<ProductQuery>()
                 .AddMutationType<ProductMutation>()
                 .AddType<ProductType>()
-                .AddType<SizeType>()
-                .AddType<CategoryType>();
+                .AddType<SizeType>();
 
         var sp = services.BuildServiceProvider();
         using var scope = sp.CreateScope();

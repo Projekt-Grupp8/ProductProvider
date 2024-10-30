@@ -10,7 +10,7 @@ public interface IProductService
 {
     Task<Product> CreateProductAsync(ProductCreateRequest request);
     Task<Product> GetProductByIdAsync(string id);
-    Task<IEnumerable<Product>> GetProductsByCategoryAsync (CategoryEntity categoryEntity);
+    Task<IEnumerable<Product>> GetProductsByCategoryAsync (string category);
     Task<IEnumerable<Product>> GetAllProductsAsync();
     Task<Product> UpdateProductAsync(ProductUpdateRequest request);
     Task<bool> DeleteProductAsync(string id);
@@ -56,11 +56,11 @@ public class ProductService(IDbContextFactory<DataContext> contextFactory) : IPr
         return productEntity == null ? null! : ProductFactory.Create(productEntity);
     }
 
-    public async Task<IEnumerable<Product>> GetProductsByCategoryAsync(CategoryEntity categoryEntity)
+    public async Task<IEnumerable<Product>> GetProductsByCategoryAsync(string category)
     {
         await using var context = _contextFactory.CreateDbContext();
         var productEntities = await context.Products
-            .Where(c => c.Category.CategoryName == categoryEntity.CategoryName)
+            .Where(c => c.Category == category)
             .ToListAsync();
             ;
 
