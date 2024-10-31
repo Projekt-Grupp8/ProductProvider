@@ -36,7 +36,7 @@ public class Playground(ILogger<Playground> logger)
                 <script>
                     window.addEventListener('load', function (event) {
                         GraphQLPlayground.init(document.getElementById('root'), {
-                            endpoint: '/api/graphql'
+                            endpoint: '/api/products'
                         })
                     })
                 </script>

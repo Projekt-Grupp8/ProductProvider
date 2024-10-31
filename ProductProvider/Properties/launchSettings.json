@@ -5,7 +5,7 @@
       "commandLineArgs": "--port 7281",
       "environmentVariables": {
         "COSMOS_URI": "AccountEndpoint=https://cosmos-rika.documents.azure.com:443/;AccountKey=BkIaP6qXP61gw1s8dJmtXakn4S1W5Prj9rHkPQjQKe7KpBPD5RawnJQyefWfyw75KWK7JTtYx4X4ACDbEIPQCw==;",
-        "COSMOS_DB": "Rika"
+        "COSMOS_DB": "ProductDB"
       }
     }
   }
