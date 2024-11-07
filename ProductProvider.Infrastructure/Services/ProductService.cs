@@ -79,7 +79,8 @@ public class ProductService(IDbContextFactory<DataContext> contextFactory) : IPr
     {
         await using var context = _contextFactory.CreateDbContext();
         var existingProduct = await context.Products.FirstOrDefaultAsync(x => x.Id == request.Id);
-        if (existingProduct == null) return null!;
+        if (existingProduct == null) 
+            return null;
 
         var updatedProductEntity = ProductFactory.Update(request);
         updatedProductEntity.Id = existingProduct.Id;
