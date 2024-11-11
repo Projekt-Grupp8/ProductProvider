@@ -32,6 +32,16 @@ var host = new HostBuilder()
         }
             );
 
+        services.AddCors(options =>
+        {
+            options.AddPolicy("AllowReactApp", policy =>
+            {
+                policy.WithOrigins("*", "rikawebappgrupp8-gtg2dxecc0hac3a7.westeurope-01.azurewebsites.net")
+                      .AllowAnyHeader()
+                      .AllowAnyMethod();
+            });
+        });
+
         services.AddScoped<IProductService, ProductService>();
 
         services.AddGraphQLFunction()
