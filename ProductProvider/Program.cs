@@ -36,7 +36,7 @@ var host = new HostBuilder()
         {
             options.AddPolicy("AllowReactApp", policy =>
             {
-                policy.WithOrigins("*")
+                policy.WithOrigins("*", "rikawebappgrupp8-gtg2dxecc0hac3a7.westeurope-01.azurewebsites.net")
                       .AllowAnyHeader()
                       .AllowAnyMethod();
             });
