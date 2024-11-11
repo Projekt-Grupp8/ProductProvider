@@ -32,6 +32,16 @@ var host = new HostBuilder()
         }
             );
 
+        services.AddCors(options =>
+        {
+            options.AddPolicy("AllowReactApp", policy =>
+            {
+                policy.WithOrigins("*")
+                      .AllowAnyHeader()
+                      .AllowAnyMethod();
+            });
+        });
+
         services.AddScoped<IProductService, ProductService>();
 
         services.AddGraphQLFunction()
